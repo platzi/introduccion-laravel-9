@@ -9,6 +9,9 @@ class PageController extends Controller
 {
 	public function home(Request $request)
 	{
+		// dd($_REQUEST);
+		// dd($request->all());
+		
 		$search = $request->search;
 
 		$posts = Post::where('title', 'LIKE', "%{$search}%")
