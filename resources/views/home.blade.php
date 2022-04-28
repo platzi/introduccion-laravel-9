@@ -21,6 +21,13 @@
             </p>
 
             <h2 class="text-lg text-gray-900 mt-2">{{ $post->title }}</h2>
+
+             <div class="text-xs text-gray-900 opacity-75 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+                {{ $post->user->name }}
+            </div>
         </a>
         @endforeach
     </div>
