@@ -1,8 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        	{{ __('Posts') }}
-       	</h2>
+       	<h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-between">
+            {{ __('Posts') }}
+
+            <a href="{{ route('posts.create') }}" class="text-xs bg-gray-800 text-white rounded px-2 py-1">Crear</a>
+		</h2>
     </x-slot>
 
     <div class="py-12">
@@ -15,7 +17,7 @@
                         <tr class="border-b border-gray-200 text-sm">
                             <td class="px-6 py-4">{{ $post->title }}</td>
                             <td class="px-6 py-4">
-                                <a href="#" class="text-indigo-600">Editar</a>
+                                <a href="{{ route('posts.edit', $post) }}" class="text-indigo-600">Editar</a>
                             </td>
                             <td class="px-6 py-4">
                             	<form action="{{ route('posts.destroy', $post) }}" method="POST">
